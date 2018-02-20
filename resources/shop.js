@@ -11,23 +11,22 @@ var rr;
 var index;
 var send = []
 
-for(r = 0; r < shopItems.length; r++){
-	socket.emit(
-		'convert', shopItems[rz]
-	);
-	
-	setTimeout(function(){
-		socket.on('convert', function(name){
-			console.log(name)
-			console.log(rz)
-			shopItems[rz] = name
-			var t = document.getElementById('shopItems').innerHTML =
-				document.getElementById('shopItems').innerHTML
-				+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItems[rz] + "</p>";
-			rz += 1
-		})
+socket.emit(
+	'convert', shopItems[0]
+);
 
-	}, 100)
+socket.on('convert', function(name){
+	shopItems[0] = name
+})
+
+for(r = 0; r < shopItems.length; r++){
+	
+	
+
+	var t = document.getElementById('shopItems').innerHTML =
+		document.getElementById('shopItems').innerHTML
+		+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItems[rz] + "</p>";
+	rz += 1
 	
 	
 	console.log(shopItems)
