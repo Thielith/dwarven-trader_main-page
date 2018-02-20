@@ -6,32 +6,38 @@ var rz = 0
 
 var socket = io.connect('http://10.0.2.15:33336');
 
-var r;
+var r = 0;
 var rr;
 var index;
 var send = []
 
 socket.emit(
-	'convert', shopItems[0]
+	'convert', shopItems[r]
 );
 
 socket.on('convert', function(name){
-	shopItems[0] = name
+	shopItems[r] = name
+	r += 1
+	
+	if(r != shopItems.length){
+		socket.emit(
+			'convert', shopItems[r]
+		);
+	}
+	else{
+		for(r = 0; r < shopItems.length; r++){
+			var t = document.getElementById('shopItems').innerHTML =
+				document.getElementById('shopItems').innerHTML
+				+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItems[rz] + "</p>";
+			rz += 1
+			console.log(shopItems)
+		}
+	}
+	
 })
 
-for(r = 0; r < shopItems.length; r++){
-	
-	
 
-	var t = document.getElementById('shopItems').innerHTML =
-		document.getElementById('shopItems').innerHTML
-		+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItems[rz] + "</p>";
-	rz += 1
-	
-	
-	console.log(shopItems)
-	
-}
+
 for(rr = 0; rr < playerItems.length; rr++){
 	var t = document.getElementById('playerItems').innerHTML =
         document.getElementById('playerItems').innerHTML
