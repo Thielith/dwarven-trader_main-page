@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+		<script src='../resources/combat.js'></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+		<link rel='stylesheet' href='../index.css' />
+		<link rel='stylesheet' href='../resources/align.css' />
+		<link rel='stylesheet' href='../resources/characters.css' />
+		
+    </head>
+
+    <body>
+		<div class="container" style="border-style:hidden hidden solid">
+			<div class="row">
+				<div class="container collumS" style="margin:5px;width:17%">
+					<p class="stayCenter"><u><b>Your Health:</b></u></p>
+					<p class="stayCenter">x/y</p>
+				</div>
+				
+				<div class="container collumM" style="width:64%;border:0px">
+					
+				</div>
+				
+				<div class="container collumS" style="margin:5px;width:17%;float:right">
+					<p class="stayCenter"><u><b>Enemy's Total Health:</b></u></p>
+					<p class="stayCenter">x/y</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="container character">
+					<p class="stayCenter">x/y</p>
+				</div>
+				
+				<div class="container collumM" style="width:64%;border:0px">
+				</div>
+				
+				<div class="container character" style="float:right;background-color:black">
+					<p class="stayCenter" style="color:white">x/y</p>
+				</div>
+			</div>
+			
+			<div class="container" style="border-style:solid hidden hidden">
+				<h3 class="stayCenter">What would you like to do?</h3>
+				<p class='button attack' onclick="punch()">Attack</p>
+				<p class='button attack' onclick="punch()">Spells</p>
+				<p class='button attack' onclick="punch()">Items</p>
+				<a class='button attack' href="./town.html">Run</a>
+			</div>
+			
+    </body>
+</html>

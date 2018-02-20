@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+		<script src="http://192.168.10.200:33336/socket.io/socket.io.js"></script>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+		<link rel='stylesheet' href='../index.css' />
+		<link rel='stylesheet' href='../resources/align.css' />
+		<link rel='stylesheet' href='../resources/characters.css' />
+    </head>
+
+    <body>
+		<div class="container" style="border-style:hidden hidden solid">
+			<div class="header" style="border-style:hidden hidden solid">
+				<h1 class="stayCenter">What would you like to buy/sell?</h1>
+			</div>
+			
+			<div class="row">
+				<div class="container" style="width:50%;border-style:hidden">
+					<h3 class="stayCenter"><u>Avaliable Items:</u></h3>
+					<p class="stayCenter" id="shopItems"></p>
+				</div>
+				
+				<div class="container" style="width:50%;border-style:hidden hidden hidden solid">
+					<h3 class="stayCenter"><u>Your Items:</u></h3>
+					<p class="stayCenter" id="playerItems"></p>
+				</div>
+			</div>
+			
+			<div class="container" style="border-style:solid hidden hidden">
+				<a class='button attack' href="./town.html">Leave</a>
+			</div>
+		</div>
+    </body>
+	
+	<head>
+		<script src='../resources/shop.js'></script>
+	</head>
+</html>
