@@ -4,7 +4,7 @@ import sys
 
 db = MySQLdb.connect(host="localhost",  # your host
                      user="root",  # username
-                     passwd="alice21",  # password
+                     passwd="asdf",  # password
                      db="DwarvenTrader")  # name of the database
 cur = db.cursor()
 
@@ -63,7 +63,7 @@ def getDataFromTableByID(connection, table, idName, id):
 
 if sys.argv[7] == "add transaction":
 	print("adding transaction")
-	addToPlayerDB(cur,sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
+	addTransactionToDB(cur,sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
 	print("commit update")
 	db.commit();
 	print("close")

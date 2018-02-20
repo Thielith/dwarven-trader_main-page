@@ -8,7 +8,7 @@ var azsx = 0
 var con = mysql.createConnection({
 	host: "localhost",
 	user: "root",
-	password: "alice21",
+	password: "asdf",
 	database: "DwarvenTrader"
 })
 

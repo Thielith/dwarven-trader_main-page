@@ -4,7 +4,7 @@ var playerID = 0
 var shopID = 0
 var rz = 0
 
-var socket = io.connect('http://192.168.10.200:33336');
+var socket = io.connect('http://10.0.2.15:33336');
 
 var r;
 var rr;
