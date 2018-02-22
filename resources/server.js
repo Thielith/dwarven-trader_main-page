@@ -3,7 +3,6 @@ var io = require('socket.io').listen(33336);
 const {exec} = require('child_process');
 
 var delay = 3300
-var azsx = 0
 
 var con = mysql.createConnection({
 	host: "localhost",
@@ -17,10 +16,8 @@ io.sockets.on('connection', function (socket) {
 	var clientIp = socket.request.connection.remoteAddress;
 	console.log("Someone From " + clientIp + " Connected")
 	
-	socket.on('convert', function(list){
-		console.log(azsx + " ?")
-		console.log(list)
-		var sql = "SELECT * FROM list_of_items WHERE ItemID = " + list + ";"
+	socket.on('convert', function(item){
+		var sql = "SELECT * FROM list_of_items WHERE ItemID = " + item + ";"
 		con.query(sql, function(err, result){
 			if (err) throw err;
 			console.log(result)

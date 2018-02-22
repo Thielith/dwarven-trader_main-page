@@ -1,5 +1,9 @@
 var playerItems = [];
 var shopItems = [1, 2, 3, 4];
+
+var playerItemsDisplay = [];
+var shopItemsDisplay = [];
+
 var playerID = 0
 var shopID = 0
 var rz = 0
@@ -16,7 +20,7 @@ socket.emit(
 );
 
 socket.on('convert', function(name){
-	shopItems[r] = name
+	shopItemsDisplay[r] = name
 	r += 1
 	
 	if(r != shopItems.length){
@@ -28,9 +32,8 @@ socket.on('convert', function(name){
 		for(r = 0; r < shopItems.length; r++){
 			var t = document.getElementById('shopItems').innerHTML =
 				document.getElementById('shopItems').innerHTML
-				+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItems[rz] + "</p>";
+				+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItemsDisplay[rz] + "</p>";
 			rz += 1
-			console.log(shopItems)
 		}
 	}
 	
