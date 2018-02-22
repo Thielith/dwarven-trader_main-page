@@ -23,6 +23,7 @@ io.sockets.on('connection', function (socket) {
 			console.log(result)
 			var s = result[0].ItemName
 			s = s.toString()
+			console.log(s)
 			socket.emit(
 				'convert', s
 			);
