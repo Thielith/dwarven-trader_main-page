@@ -76,8 +76,8 @@ function buy(num){
 	
 	document.getElementById('shopItems' + num).innerHTML = ""
 	rr += 1
-	console.log(playerItems)
-	console.log(playerItemsDisplay)
+	console.log(shopItems)
+	console.log(shopItemsDisplay)
 	update()
 }
 function sell(num){
@@ -98,8 +98,9 @@ function sell(num){
 	
 	document.getElementById('playerItems' + num).innerHTML = ""
 	r += 1
-	console.log(shopItems)
-	console.log(shopItemsDisplay)
+	console.log(playerItems)
+	console.log(playerItemsDisplay)
+	
 	update()
 }
 
