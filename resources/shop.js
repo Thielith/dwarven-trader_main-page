@@ -1,4 +1,4 @@
-var playerItems = [];
+var playerItems = [5];
 var shopItems = [1, 2, 3, 4];
 
 var playerItemsDisplay = [];
