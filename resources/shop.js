@@ -6,7 +6,6 @@ var shopItemsDisplay = [];
 
 var playerID = 0
 var shopID = 0
-var rz = 0
 
 var socket = io.connect('http://10.0.2.15:33336');
 
@@ -32,19 +31,36 @@ socket.on('convert', function(name){
 		for(r = 0; r < shopItems.length; r++){
 			var t = document.getElementById('shopItems').innerHTML =
 				document.getElementById('shopItems').innerHTML
-				+ "<p id='shopItems" + rz + "' onclick='buy(" + rz + ")'>" + shopItemsDisplay[rz] + "</p>";
-			rz += 1
+				+ "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + shopItemsDisplay[r] + "</p>";
 		}
 	}
 	
 })
 
+setTimeout(function(){
+	socket.emit(
+		'convert', playerItems[r]
+	);
 
-for(rr = 0; rr < playerItems.length; rr++){
-	var t = document.getElementById('playerItems').innerHTML =
-        document.getElementById('playerItems').innerHTML
-        + "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItems[rr] + "</p>";
-}
+	socket.on('convert', function(name){
+		playerItemsDisplay[r] = name
+		r += 1
+		
+		if(r != playerItems.length){
+			socket.emit(
+				'convert', playerItems[r]
+			);
+		}
+		else{
+			for(rr = 0; rr < playerItems.length; rr++){
+				var t = document.getElementById('playerItems').innerHTML =
+					document.getElementById('playerItems').innerHTML
+					+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
+			}
+		}
+		
+	})
+}, 250)
 
 function update(){
 	send = []
