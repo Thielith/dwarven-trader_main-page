@@ -39,16 +39,16 @@ socket.on('convert', function(name){
 
 setTimeout(function(){
 	socket.emit(
-		'convert', playerItems[r]
+		'convert', playerItems[rr]
 	);
 
 	socket.on('convert', function(name){
-		playerItemsDisplay[r] = name
+		playerItemsDisplay[rr] = name
 		r += 1
 		
 		if(r != playerItems.length){
 			socket.emit(
-				'convert', playerItems[r]
+				'convert', playerItems[rr]
 			);
 		}
 		else{
@@ -60,7 +60,7 @@ setTimeout(function(){
 		}
 		
 	})
-}, 250)
+}, 2000)
 
 function update(){
 	send = []
