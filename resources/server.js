@@ -22,8 +22,9 @@ io.sockets.on('connection', function (socket) {
 			if (err) throw err;
 			console.log(result)
 			var s = result[0].ItemName
-			s = s.toString()
 			console.log(s)
+			s = s.toString()
+			
 			socket.emit(
 				'convert', s
 			);
