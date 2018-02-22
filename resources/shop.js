@@ -93,6 +93,9 @@ function sell(num){
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
 	
+	shopItemsDisplay.push(playerItemsDisplay[num])
+	playerItemsDisplay[index] = ""
+	
 	document.getElementById('playerItems' + num).innerHTML = ""
 	r += 1
 	console.log(shopItems)
