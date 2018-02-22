@@ -18,11 +18,11 @@ io.sockets.on('connection', function (socket) {
 	
 	socket.on('convert', function(item){
 		var sql = "SELECT * FROM list_of_items WHERE ItemID = " + item + ";"
+		console.log(sql)
 		con.query(sql, function(err, result){
 			if (err) throw err;
 			console.log(result)
 			var s = result[0].ItemName
-			console.log(s)
 			s = s.toString()
 			
 			socket.emit(
