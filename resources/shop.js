@@ -38,6 +38,8 @@ socket.on('convert', function(name){
 })
 
 setTimeout(function(){
+	console.log(rr)
+	console.log(playerItems[rr])
 	socket.emit(
 		'convert', playerItems[rr]
 	);
