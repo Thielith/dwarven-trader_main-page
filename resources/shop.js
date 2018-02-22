@@ -10,7 +10,7 @@ var shopID = 0
 var socket = io.connect('http://10.0.2.15:33336');
 
 var r = 0;
-var rr;
+var rr = 0;
 var index;
 var send = []
 
