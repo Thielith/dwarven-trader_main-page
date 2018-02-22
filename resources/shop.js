@@ -37,7 +37,6 @@ socket.on('convert', function(name){
 })
 
 
-
 for(rr = 0; rr < playerItems.length; rr++){
 	var t = document.getElementById('playerItems').innerHTML =
         document.getElementById('playerItems').innerHTML
