@@ -64,6 +64,7 @@ function buy(num){
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItems.indexOf(item)
 	console.log(index)
+	console.log(item)
 	
     document.getElementById('playerItems').innerHTML =
         document.getElementById('playerItems').innerHTML
@@ -87,6 +88,7 @@ function sell(num){
 	var item = document.getElementById('playerItems' + num).innerHTML
 	var index = playerItems.indexOf(item)
 	console.log(index)
+	console.log(item)
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
