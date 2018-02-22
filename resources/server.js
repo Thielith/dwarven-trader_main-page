@@ -27,7 +27,7 @@ io.sockets.on('connection', function (socket) {
 				'convert', s
 			);
 		})
-		azsx += 1
+
 	})
 	
 	//Edit-Update Database
