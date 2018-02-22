@@ -66,10 +66,13 @@ function buy(num){
 	
     document.getElementById('playerItems').innerHTML =
         document.getElementById('playerItems').innerHTML
-        + "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + shopItems[num] + "</p>";
+        + "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + shopItemsDisplay[num] + "</p>";
 	
 	playerItems.push(shopItems[num])
 	shopItems[index] = ""
+	
+	playerItemsDisplay.push(shopItemsDisplay[num])
+	shopItemsDisplay[index] = ""
 	
 	document.getElementById('shopItems' + num).innerHTML = ""
 	rr += 1
@@ -83,7 +86,7 @@ function sell(num){
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
-        + "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + playerItems[num] + "</p>";
+        + "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + playerItemsDisplay[num] + "</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
