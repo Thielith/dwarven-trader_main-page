@@ -23,6 +23,9 @@ socket.on('convert', function(name){
 	var displayString = who + "ItemsDisplay"
 	var string = who + "Items"
 	
+	console.log(displayString)
+	console.log(string)
+	
 	displayString[r] = name
 	r += 1
 	
