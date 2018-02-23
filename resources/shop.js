@@ -72,7 +72,7 @@ setTimeout(function(){
 	socket.emit(
 		'convert', playerItems[r]
 	);
-}, 500)
+}, 1000)
 
 function update(){
 	send = []
