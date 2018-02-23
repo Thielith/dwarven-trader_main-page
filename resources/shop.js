@@ -28,25 +28,25 @@ socket.on('convert', function(name){
 	console.log(string)
 	
 	if(who = "shop"){
-		kSend = shopItems[r]
+		kSend = shopItems
 	}
 	else if(who = "player"){
-		kSend = playerItems[r]
+		kSend = playerItems
 	}
 	
 	displayString[r] = name
 	r += 1
 	
-	if(r != string.length){
+	if(r != kSend.length){
 		socket.emit(
-			'convert', kSend
+			'convert', kSend[r]
 		);
 	}
 	else{
-		for(r = 0; r < string.length; r++){
+		for(r = 0; r < kSend.length; r++){
 			var t = document.getElementById(string).innerHTML =
 				document.getElementById(string).innerHTML
-				+ "<p id='" + string + r + "' onclick='buy(" + r + ")'>" + displayString[r] + "</p>";
+				+ "<p id='" + kSend + r + "' onclick='buy(" + r + ")'>" + kSend[r] + "</p>";
 		}
 	}
 	
