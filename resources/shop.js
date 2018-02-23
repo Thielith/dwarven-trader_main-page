@@ -56,7 +56,7 @@ socket.on('convert', function(name){
 		else if(who == "player"){
 			for(r = 0; r < playerItemsDisplay.length; r++){
 				var t = document.getElementById('playerItems').innerHTML =
-					document.getElementById(('playerItems').innerHTML
+					document.getElementById('playerItems').innerHTML
 					+ "<p id='playerItems" + r + "' onclick='buy(" + r + ")'>" + playerItemsDisplay[r] + "</p>";
 			}
 		}
