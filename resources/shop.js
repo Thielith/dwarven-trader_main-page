@@ -49,7 +49,7 @@ socket.on('convert', function(name){
 		for(r = 0; r < variable.length; r++){
 			var t = document.getElementById(string).innerHTML =
 				document.getElementById(string).innerHTML
-				+ "<p id='" + variable + r + "' onclick='buy(" + r + ")'>" + displayVariable[r] + "</p>";
+				+ "<p id='" + variable + r + "' onclick='buy(" + r + ")'>" + displayString[r] + "</p>";
 		}
 	}
 	
@@ -62,7 +62,7 @@ setTimeout(function(){
 	socket.emit(
 		'convert', playerItems[r]
 	);
-}, 2000)
+}, 500)
 
 function update(){
 	send = []
