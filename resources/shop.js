@@ -53,10 +53,11 @@ socket.on('convert', function(name){
 })
 
 setTimeout(function(){
+	r = 0
 	who = "player"
-	console.log(playerItems[rr])
+	console.log(playerItems[r])
 	socket.emit(
-		'convert', playerItems[rr]
+		'convert', playerItems[r]
 	);
 }, 2000)
 
