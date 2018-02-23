@@ -22,16 +22,24 @@ socket.emit(
 socket.on('convert', function(name){
 	var displayString = who + "ItemsDisplay"
 	var string = who + "Items"
+	var kSend;
 	
 	console.log(displayString)
 	console.log(string)
+	
+	if(who = "shop"){
+		kSend = shopItems[r]
+	}
+	else if(who = "player"){
+		kSend = playerItems[r]
+	}
 	
 	displayString[r] = name
 	r += 1
 	
 	if(r != string.length){
 		socket.emit(
-			'convert', string[r]
+			'convert', kSend
 		);
 	}
 	else{
