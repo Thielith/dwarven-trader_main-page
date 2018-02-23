@@ -28,7 +28,7 @@ socket.on('convert', function(name){
 		);
 	}
 	else{
-		for(r = 0; r < shopItems.length - 1; r++){
+		for(r = 0; r < shopItems.length; r++){
 			var t = document.getElementById('shopItems').innerHTML =
 				document.getElementById('shopItems').innerHTML
 				+ "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + shopItemsDisplay[r] + "</p>";
@@ -46,7 +46,7 @@ setTimeout(function(){
 
 	socket.on('convert', function(name){
 		playerItemsDisplay[rr] = name
-		r += 1
+		rr += 1
 		
 		if(r != playerItems.length){
 			socket.emit(
