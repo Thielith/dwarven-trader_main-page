@@ -37,7 +37,7 @@ socket.on('convert', function(name){
 		variable = playerItems
 	}
 	
-	displayString[r] = name
+	display[r] = name
 	r += 1
 	
 	if(r != variable.length){
@@ -49,7 +49,7 @@ socket.on('convert', function(name){
 		for(r = 0; r < variable.length; r++){
 			var t = document.getElementById(string).innerHTML =
 				document.getElementById(string).innerHTML
-				+ "<p id='" + variable + r + "' onclick='buy(" + r + ")'>" + displayString[r] + "</p>";
+				+ "<p id='" + variable + r + "' onclick='buy(" + r + ")'>" + display[r] + "</p>";
 		}
 	}
 	
