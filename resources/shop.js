@@ -28,7 +28,7 @@ socket.on('convert', function(name){
 		);
 	}
 	else{
-		for(r = 0; r < shopItems.length; r++){
+		for(r = 0; r < shopItems.length - 1; r++){
 			var t = document.getElementById('shopItems').innerHTML =
 				document.getElementById('shopItems').innerHTML
 				+ "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + shopItemsDisplay[r] + "</p>";
