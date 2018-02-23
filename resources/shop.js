@@ -12,38 +12,30 @@ var socket = io.connect('http://10.0.2.15:33336');
 var r = 0;
 var rr = 0;
 var index;
+var who = "shop";
 var send = []
-
-socket.emit(
-	'test'
-);
-
-socket.on('test', function(){
-	console.log('ay')
-})
-
-socket.on('test', function(){
-	console.log('bee')
-})
 
 socket.emit(
 	'convert', shopItems[r]
 );
 
 socket.on('convert', function(name){
-	shopItemsDisplay[r] = name
+	var displayString = who + "ItemsDisplay"
+	var string = who + "Items"
+	
+	displayString[r] = name
 	r += 1
 	
-	if(r != shopItems.length){
+	if(r != string.length){
 		socket.emit(
-			'convert', shopItems[r]
+			'convert', string[r]
 		);
 	}
 	else{
-		for(r = 0; r < shopItems.length; r++){
-			var t = document.getElementById('shopItems').innerHTML =
-				document.getElementById('shopItems').innerHTML
-				+ "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + shopItemsDisplay[r] + "</p>";
+		for(r = 0; r < string.length; r++){
+			var t = document.getElementById(string).innerHTML =
+				document.getElementById(string).innerHTML
+				+ "<p id='" + string + r + "' onclick='buy(" + r + ")'>" + displayString[r] + "</p>";
 		}
 	}
 	
@@ -52,28 +44,10 @@ socket.on('convert', function(name){
 setTimeout(function(){
 	console.log(rr)
 	console.log(playerItems[rr])
+	who = "player"
 	socket.emit(
 		'convert', playerItems[rr]
 	);
-
-	socket.on('convert', function(name){
-		playerItemsDisplay[rr] = name
-		rr += 1
-		
-		if(r != playerItems.length){
-			socket.emit(
-				'convert', playerItems[rr]
-			);
-		}
-		else{
-			for(rr = 0; rr < playerItems.length; rr++){
-				var t = document.getElementById('playerItems').innerHTML =
-					document.getElementById('playerItems').innerHTML
-					+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
-			}
-		}
-		
-	})
 }, 2000)
 
 function update(){
