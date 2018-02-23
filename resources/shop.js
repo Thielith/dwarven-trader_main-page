@@ -47,14 +47,14 @@ socket.on('convert', function(name){
 	}
 	else{
 		if(who == "shop"){
-			for(rr = 0; rr < shopItemsDisplay.length; rr++){
+			for(rr = 0; rr < shopItems.length; rr++){
 				var t = document.getElementById('shopItems').innerHTML =
 					document.getElementById('shopItems').innerHTML
 					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
 			}
 		}
 		else if(who == "player"){
-			for(r = 0; r < playerItemsDisplay.length; r++){
+			for(r = 0; r < playerItems.length; r++){
 				var t = document.getElementById('playerItems').innerHTML =
 					document.getElementById('playerItems').innerHTML
 					+ "<p id='playerItems" + r + "' onclick='buy(" + r + ")'>" + playerItemsDisplay[r] + "</p>";
