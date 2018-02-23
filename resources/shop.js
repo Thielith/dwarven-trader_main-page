@@ -22,31 +22,34 @@ socket.emit(
 socket.on('convert', function(name){
 	var displayString = who + "ItemsDisplay"
 	var string = who + "Items"
-	var kSend;
+	var displayVariable;
+	var variable;
 	
 	console.log(displayString)
 	console.log(string)
 	
 	if(who == "shop"){
-		kSend = shopItems
+		displayVariable = shopItemsDisplay
+		variable = shopItems
 	}
 	else if(who == "player"){
-		kSend = playerItems
+		displayVariable = playerItemsDisplay
+		variable = playerItems
 	}
 	
 	displayString[r] = name
 	r += 1
 	
-	if(r != kSend.length){
+	if(r != variable.length){
 		socket.emit(
-			'convert', kSend[r]
+			'convert', variable[r]
 		);
 	}
 	else{
-		for(r = 0; r < kSend.length; r++){
+		for(r = 0; r < variable.length; r++){
 			var t = document.getElementById(string).innerHTML =
 				document.getElementById(string).innerHTML
-				+ "<p id='" + kSend + r + "' onclick='buy(" + r + ")'>" + kSend[r] + "</p>";
+				+ "<p id='" + variable + r + "' onclick='buy(" + r + ")'>" + displayVariable[r] + "</p>";
 		}
 	}
 	
