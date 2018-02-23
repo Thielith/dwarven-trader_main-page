@@ -31,7 +31,7 @@ io.sockets.on('connection', function (socket) {
 
 	})
 	
-	socket.on('test', funtion(){
+	socket.on('test', function(){
 		socket.emit(
 			'test'
 		)
