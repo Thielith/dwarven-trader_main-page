@@ -31,6 +31,12 @@ io.sockets.on('connection', function (socket) {
 
 	})
 	
+	socket.on('test', funtion(){
+		socket.emit(
+			'test'
+		)
+	})
+	
 	//Edit-Update Database
 	socket.on('transaction', function (info) {		// 'cmd' is arbitrary
 		var sendLine = ""

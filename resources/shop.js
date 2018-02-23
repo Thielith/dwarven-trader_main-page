@@ -15,6 +15,18 @@ var index;
 var send = []
 
 socket.emit(
+	'test'
+);
+
+socket.on('test', function(){
+	console.log('ay')
+})
+
+socket.on('test', function(){
+	console.log('bee')
+})
+
+socket.emit(
 	'convert', shopItems[r]
 );
 
