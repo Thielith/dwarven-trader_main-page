@@ -37,7 +37,7 @@ socket.on('convert', function(name){
 		variable = playerItems
 	}
 	
-	displayString.append(name)
+	displayString.push(name)
 	r += 1
 	
 	if(r != variable.length){
