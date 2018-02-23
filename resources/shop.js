@@ -20,7 +20,7 @@ socket.emit(
 );
 
 socket.on('convert', function(name){
-	var displayString;
+	var displayString = []
 	var string = who + "Items"
 	var displayVariable;
 	var variable;
