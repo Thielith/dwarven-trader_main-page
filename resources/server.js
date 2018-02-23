@@ -17,9 +17,7 @@ io.sockets.on('connection', function (socket) {
 	console.log("Someone From " + clientIp + " Connected")
 	
 	socket.on('convert', function(item){
-		console.log(item)
 		var sql = "SELECT * FROM list_of_items WHERE ItemID = " + item + ";"
-		console.log(sql)
 		con.query(sql, function(err, result){
 			if (err) throw err;
 			console.log(result)
