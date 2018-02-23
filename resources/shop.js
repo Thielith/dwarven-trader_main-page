@@ -29,17 +29,15 @@ socket.on('convert', function(name){
 	console.log(string)
 	
 	if(who == "shop"){
-		shopItemsDisplay.push(name)
 		displayVariable = shopItemsDisplay
 		variable = shopItems
 	}
 	else if(who == "player"){
-		playerItemsDisplay.push(name)
 		displayVariable = playerItemsDisplay
 		variable = playerItems
 	}
 	
-	displayVariable.push(name)
+	displayString[r] = name
 	r += 1
 	
 	if(r != variable.length){
