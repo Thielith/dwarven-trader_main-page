@@ -46,11 +46,21 @@ socket.on('convert', function(name){
 		);
 	}
 	else{
-		for(r = 0; r < variable.length; r++){
-			var t = document.getElementById(string).innerHTML =
-				document.getElementById(string).innerHTML
-				+ "<p id='" + variable + r + "' onclick='buy(" + r + ")'>" + displayVariable[r] + "</p>";
+		if(who == "shop"){
+			for(rr = 0; rr < shopItemsDisplay.length; rr++){
+				var t = document.getElementById('shopItems').innerHTML =
+					document.getElementById('shopItems').innerHTML
+					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
+			}
 		}
+		else if(who == "player"){
+			for(r = 0; r < playerItemsDisplay.length; r++){
+				var t = document.getElementById('playerItems').innerHTML =
+					document.getElementById(('playerItems').innerHTML
+					+ "<p id='playerItems" + r + "' onclick='buy(" + r + ")'>" + playerItemsDisplay[r] + "</p>";
+			}
+		}
+
 	}
 	
 })
