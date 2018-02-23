@@ -27,10 +27,10 @@ socket.on('convert', function(name){
 	console.log(displayString)
 	console.log(string)
 	
-	if(who = "shop"){
+	if(who == "shop"){
 		kSend = shopItems
 	}
-	else if(who = "player"){
+	else if(who == "player"){
 		kSend = playerItems
 	}
 	
