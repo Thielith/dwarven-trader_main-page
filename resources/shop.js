@@ -41,14 +41,7 @@ socket.on('convert', function(name){
 	
 })
 
-setTimeout(function(){
-	r = 0
-	who = "player"
-	console.log(playerItems[r])
-	socket.emit(
-		'convert', playerItems[r]
-	);
-}, 1000)
+
 
 function update(){
 	send = []
