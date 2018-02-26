@@ -20,48 +20,24 @@ socket.emit(
 );
 
 socket.on('convert', function(name){
-	var displayString = who + "ItemsDisplay"
-	var string = who + "Items"
-	var displayVariable;
-	var variable;
-	
-	console.log(displayString)
-	console.log(string)
-	
-	if(who == "shop"){
-		displayVariable = shopItemsDisplay
-		variable = shopItems
-	}
-	else if(who == "player"){
-		displayVariable = playerItemsDisplay
-		variable = playerItems
-	}
-	
-	displayString[r] = name
+	shopItemsDisplay[r] = name
 	r += 1
 	
-	if(r != variable.length){
+	if(r != shopItems.length){
 		socket.emit(
-			'convert', variable[r]
+			'convert', shopItems[r]
 		);
 	}
+	
 	else{
-		if(who == "shop"){
-			for(rr = 0; rr < shopItems.length; rr++){
-				var t = document.getElementById('shopItems').innerHTML =
-					document.getElementById('shopItems').innerHTML
-					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
-			}
+		for(rr = 0; rr < shopItems.length; rr++){
+			var t = document.getElementById('shopItems').innerHTML =
+				document.getElementById('shopItems').innerHTML
+				+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
 		}
-		else if(who == "player"){
-			for(r = 0; r < playerItems.length; r++){
-				var t = document.getElementById('playerItems').innerHTML =
-					document.getElementById('playerItems').innerHTML
-					+ "<p id='playerItems" + r + "' onclick='buy(" + r + ")'>" + playerItemsDisplay[r] + "</p>";
-			}
-		}
-
 	}
+	
+	
 	
 })
 
