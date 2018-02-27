@@ -22,7 +22,6 @@ socket.emit(
 
 	socket.on('convert', function(name){
 		if(who == "shop"){
-		
 			shopItemsDisplay[r] = name
 			r += 1
 			
@@ -49,24 +48,22 @@ socket.emit(
 		}
 
 		else if(who == "player"){
-			socket.on('convert', function(name){
-				playerItemsDisplay[r] = name
-				r += 1
-				
-				if(r != playerItems.length){
-					socket.emit(
-						'convert', playerItems[r]
-					);
+			playerItemsDisplay[r] = name
+			r += 1
+			
+			if(r != playerItems.length){
+				socket.emit(
+					'convert', playerItems[r]
+				);
+			}
+			
+			else{
+				for(rr = 0; rr < playerItems.length; rr++){
+					var t = document.getElementById('playerItems').innerHTML =
+						document.getElementById('playerItems').innerHTML
+						+ "<p id='playerItems" + rr + "' onclick='buy(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
 				}
-				
-				else{
-					for(rr = 0; rr < playerItems.length; rr++){
-						var t = document.getElementById('playerItems').innerHTML =
-							document.getElementById('playerItems').innerHTML
-							+ "<p id='playerItems" + rr + "' onclick='buy(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
-					}
-				}
-			})
+			}
 		}
 	})
 
