@@ -104,7 +104,6 @@ function buy(num){
 	rr += 1
 	console.log(shopItems)
 	console.log(shopItemsDisplay)
-	update()
 }
 function sell(num){
 
@@ -128,6 +127,5 @@ function sell(num){
 	console.log(playerItems)
 	console.log(playerItemsDisplay)
 	
-	update()
 }
 
