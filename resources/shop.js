@@ -19,28 +19,53 @@ socket.emit(
 	'convert', shopItems[r]
 );
 
-socket.on('convert', function(name){
-	shopItemsDisplay[r] = name
-	r += 1
-	
-	if(r != shopItems.length){
-		socket.emit(
-			'convert', shopItems[r]
-		);
-	}
-	
-	else{
-		for(rr = 0; rr < shopItems.length; rr++){
-			var t = document.getElementById('shopItems').innerHTML =
-				document.getElementById('shopItems').innerHTML
-				+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
+if(who == "shop"){
+	socket.on('convert', function(name){
+		shopItemsDisplay[r] = name
+		r += 1
+		
+		if(r != shopItems.length){
+			socket.emit(
+				'convert', shopItems[r]
+			);
 		}
-	}
-	
-	
-	
-})
+		
+		else{
+			for(rr = 0; rr < shopItems.length; rr++){
+				var t = document.getElementById('shopItems').innerHTML =
+					document.getElementById('shopItems').innerHTML
+					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
+			}
+			who = "player"
+			r = 0
+			rr = 0
+			socket.emit(
+				'convert', playerItems[r]
+			);
+		}
+	})
+}
 
+else if(who == "player"){
+	socket.on('convert', function(name){
+		playerItemsDisplay[r] = name
+		r += 1
+		
+		if(r != playerItems.length){
+			socket.emit(
+				'convert', playerItems[r]
+			);
+		}
+		
+		else{
+			for(rr = 0; rr < playerItems.length; rr++){
+				var t = document.getElementById('playerItems').innerHTML =
+					document.getElementById('playerItems').innerHTML
+					+ "<p id='playerItems" + rr + "' onclick='buy(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
+			}
+		}
+	})
+}
 
 
 function update(){
