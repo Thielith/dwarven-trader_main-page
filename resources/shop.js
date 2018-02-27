@@ -61,7 +61,7 @@ socket.emit(
 				for(rr = 0; rr < playerItems.length; rr++){
 					var t = document.getElementById('playerItems').innerHTML =
 						document.getElementById('playerItems').innerHTML
-						+ "<p id='playerItems" + rr + "' onclick='buy(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
+						+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
 				}
 			}
 		}
