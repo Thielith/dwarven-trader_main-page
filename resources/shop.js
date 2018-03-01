@@ -1,4 +1,4 @@
-var playerItems = [5];
+var playerItems = [5, 6];
 var shopItems = [1, 2, 3, 4];
 
 var playerItemsDisplay = [];
@@ -11,6 +11,8 @@ var socket = io.connect('http://10.0.2.15:33336');
 
 var r = 0;
 var rr = 0;
+var buyNum = 0;
+var sellNum = 0;
 var index;
 var who = "shop";
 var send = []
