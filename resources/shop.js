@@ -38,7 +38,9 @@ socket.emit(
 					var t = document.getElementById('shopItems').innerHTML =
 						document.getElementById('shopItems').innerHTML
 						+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
+					buyNum = rr
 				}
+				
 				who = "player"
 				r = 0
 				rr = 0
@@ -64,6 +66,7 @@ socket.emit(
 					var t = document.getElementById('playerItems').innerHTML =
 						document.getElementById('playerItems').innerHTML
 						+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
+					sellNum = rr
 				}
 			}
 		}
@@ -94,7 +97,7 @@ function buy(num){
 	
     document.getElementById('playerItems').innerHTML =
         document.getElementById('playerItems').innerHTML
-        + "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + shopItemsDisplay[num] + "</p>";
+        + "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + "</p>";
 	
 	playerItems.push(shopItems[num])
 	shopItems[index] = ""
@@ -116,7 +119,7 @@ function sell(num){
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
-        + "<p id='shopItems" + r + "' onclick='buy(" + r + ")'>" + playerItemsDisplay[num] + "</p>";
+        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + "</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
