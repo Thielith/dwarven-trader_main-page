@@ -38,7 +38,7 @@ socket.emit(
 					var t = document.getElementById('shopItems').innerHTML =
 						document.getElementById('shopItems').innerHTML
 						+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
-					buyNum = rr
+					buyNum = rr + 1
 				}
 				
 				who = "player"
@@ -66,7 +66,7 @@ socket.emit(
 					var t = document.getElementById('playerItems').innerHTML =
 						document.getElementById('playerItems').innerHTML
 						+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
-					sellNum = rr
+					sellNum = rr + 1
 				}
 			}
 		}
