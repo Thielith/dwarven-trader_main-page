@@ -106,7 +106,7 @@ function buy(num){
 	shopItemsDisplay[index] = ""
 	
 	document.getElementById('shopItems' + num).innerHTML = ""
-	rr += 1
+	sellNum += 1
 	console.log(shopItems)
 	console.log(shopItemsDisplay)
 }
@@ -128,7 +128,7 @@ function sell(num){
 	playerItemsDisplay[index] = ""
 	
 	document.getElementById('playerItems' + num).innerHTML = ""
-	r += 1
+	buyNum += 1
 	console.log(playerItems)
 	console.log(playerItemsDisplay)
 	
