@@ -139,7 +139,7 @@ function buy(num){
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
-		playerMoney -= shopItemsPrice[index]
+		playerMoney -= parseInt(shopItemsPrice[index])
 		document.getElementById('playerMoney').innerHTML = playerMoney
 		console.log(shopItemsPrice[index])
 		console.log(playerMoney)
@@ -172,7 +172,7 @@ function sell(num){
 	document.getElementById('playerItems' + num + "a").innerHTML = ""
 	buyNum += 1
 	
-	playerMoney += playerItemsPrice[index]
+	playerMoney += parseInt(playerItemsPrice[index])
 	document.getElementById('playerMoney').innerHTML = playerMoney
 	
 	console.log(playerItemsPrice[index])
