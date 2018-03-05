@@ -31,6 +31,7 @@ socket.on('convert', function(list){
 		r += 1
 		
 		if(r != shopItems.length){
+			console.log("<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + ": " + shopItemsPrice[rr]" Gold</p>")
 			socket.emit(
 				'convert', shopItems[r]
 			);
