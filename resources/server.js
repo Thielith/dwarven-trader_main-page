@@ -17,22 +17,29 @@ io.sockets.on('connection', function (socket) {
 	console.log("Someone From " + clientIp + " Connected")
 	
 	socket.on('convert', function(item){
+		var sendLine = []
 		var sql = "SELECT * FROM list_of_items WHERE ItemID = " + item + ";"
 		con.query(sql, function(err, result){
 			if (err) throw err;
 			console.log(result)
 			var s = result[0].ItemName
 			s = s.toString()
+			var p = result[0].Price
+			p = p.toString()
+			
+			sendLine.push(s)
+			sendLine.push(p)
 			
 			socket.emit(
-				'convert', s
+				'convert', sendLine
 			);
+			
 		})
 
 	})
 	
-	//Edit-Update Database
-	socket.on('transaction', function (info) {		// 'cmd' is arbitrary
+	//Edit-Update Transaction Database
+	socket.on('transaction', function (info) {
 		var sendLine = ""
 		
 		for(i = 0; i < info.length; i++){
