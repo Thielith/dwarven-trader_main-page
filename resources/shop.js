@@ -111,7 +111,7 @@ function buy(num){
 	
 		document.getElementById('playerItems').innerHTML =
 			document.getElementById('playerItems').innerHTML
-			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + ": " + shopItemsPrice[num] + " Gold</p>";
+			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + ": " + shopItemsPrice[sellNum] + " Gold</p>";
 		
 		playerItems.push(shopItems[num])
 		shopItems[index] = ""
