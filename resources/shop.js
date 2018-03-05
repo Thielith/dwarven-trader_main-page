@@ -41,9 +41,10 @@ socket.on('convert', function(list){
 				var t = document.getElementById('shopItems').innerHTML =
 					document.getElementById('shopItems').innerHTML
 					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + "</p>";
+				
 				var tt = document.getElementById('shopItems').innerHTML =
 					document.getElementById('shopItems').innerHTML
-					+ "<p id='shopItems" + rr + "'> ^" + shopItemsPrice[rr] + " Gold^</p>";
+					+ "<p id='shopItems" + rr + "a'> ^" + shopItemsPrice[rr] + " Gold^</p>";
 				buyNum = rr + 1
 			}
 			
@@ -72,7 +73,11 @@ socket.on('convert', function(list){
 			for(rr = 0; rr < playerItems.length; rr++){
 				var t = document.getElementById('playerItems').innerHTML =
 					document.getElementById('playerItems').innerHTML
-					+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + ": " + playerItemsPrice[rr] + " Gold</p>";
+					+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + "</p>";
+				
+				var tt = document.getElementById('playerItems').innerHTML =
+					document.getElementById('playerItems').innerHTML
+					+ "<p id='playerItems" + rr + "a'> ^" + playerItemsPrice[rr] + " Gold^</p>";
 				sellNum = rr + 1
 			}
 		}
@@ -101,13 +106,13 @@ function buy(num){
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItemsDisplay.indexOf(item)
 	
-	console.log(item)
-	console.log(index)
-	console.log(shopItemsPrice[sellNum])
-	console.log(playerMoney)
-	
 	if(shopItemsPrice[index] > playerMoney){
 		console.log("Too Expensive")
+		var ytv = document.getElementById('shopItems' + num + "a").innerHTML
+		document.getElementById('shopItems' + num + "a").innerHTML = "Too Expensive"
+		setTimeout(function(){
+			document.getElementById('shopItems' + num + "a").innerHTML = ytv
+		}, 1000)
 	}
 	
 	else{
@@ -123,9 +128,8 @@ function buy(num){
 		shopItemsDisplay[index] = ""
 		
 		document.getElementById('shopItems' + num).innerHTML = ""
+		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
-		console.log(shopItems)
-		console.log(shopItemsDisplay)
 	}
 }
 function sell(num){
@@ -136,7 +140,7 @@ function sell(num){
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
-        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + ": " + playerItemsPrice[num] + " Gold</p>";
+        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + ": " + playerItemsPrice[buyNum] + " Gold</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
@@ -145,6 +149,7 @@ function sell(num){
 	playerItemsDisplay[index] = ""
 	
 	document.getElementById('playerItems' + num).innerHTML = ""
+	document.getElementById('playerItems' + num + "a").innerHTML = ""
 	buyNum += 1
 	
 	playerMoney += playerItemsPrice[index]
