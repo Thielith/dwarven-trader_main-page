@@ -70,7 +70,7 @@ socket.on('convert', function(list){
 			for(rr = 0; rr < playerItems.length; rr++){
 				var t = document.getElementById('playerItems').innerHTML =
 					document.getElementById('playerItems').innerHTML
-					+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + ": " + playerItemsPrice[rr]" Gold</p>";
+					+ "<p id='playerItems" + rr + "' onclick='sell(" + rr + ")'>" + playerItemsDisplay[rr] + ": " + playerItemsPrice[rr] + " Gold</p>";
 				sellNum = rr + 1
 			}
 		}
