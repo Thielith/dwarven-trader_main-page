@@ -1,5 +1,5 @@
 var playerItems = [5, 6];
-var playerMoney = 0
+var playerMoney = 100
 var playerItemsDisplay = [];
 var playerID = 0
 var playerItemsPrice = [];
@@ -134,6 +134,7 @@ function buy(num){
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
+		playerMoney -= shopItemsPrice[index]
 	}
 }
 function sell(num){
@@ -148,7 +149,7 @@ function sell(num){
 	
 	document.getElementById('shopItems').innerHTML =
 		document.getElementById('shopItems').innerHTML
-		+ "<p id='shopItems" + buyNum + "a'> ^" + playerItemsPrice[num] + " Gold^</p>";
+		+ "<p id='shopItems" + buyNum + "a'> ^" + playerItemsPrice[rr] + " Gold^</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
@@ -161,8 +162,6 @@ function sell(num){
 	buyNum += 1
 	
 	playerMoney += playerItemsPrice[index]
-	console.log(playerItems)
-	console.log(playerItemsDisplay)
 	
 }
 
