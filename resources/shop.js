@@ -31,8 +31,7 @@ socket.on('convert', function(list){
 		r += 1
 		
 		if(r != shopItems.length){
-			console.log(shopItemsDisplay[rr])
-			console.log(shopItemsPrice[rr])
+			console.log("<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + ": " + shopItemsPrice[rr] + " Gold</p>")
 			socket.emit(
 				'convert', shopItems[r]
 			);
@@ -42,7 +41,7 @@ socket.on('convert', function(list){
 			for(rr = 0; rr < shopItems.length; rr++){
 				var t = document.getElementById('shopItems').innerHTML =
 					document.getElementById('shopItems').innerHTML
-					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + ": " + shopItemsPrice[rr]" Gold</p>";
+					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shopItemsDisplay[rr] + ": " + shopItemsPrice[rr] + " Gold</p>";
 				buyNum = rr + 1
 			}
 			
