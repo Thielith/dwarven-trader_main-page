@@ -98,8 +98,9 @@ function buy(num){
 	console.log("buy")
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItemsDisplay.indexOf(item)
-
-	console.log(shopItemsPrice[index])
+	
+	console.log(index)
+	console.log(shopItemsPrice[sellNum])
 	console.log(playerMoney)
 	
 	if(shopItemsPrice[index] > playerMoney){
