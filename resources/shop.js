@@ -19,6 +19,8 @@ var index;
 var who = "shop";
 var send = []
 
+document.getElementById('playerMoney').innerHTML = playerMoney
+
 socket.emit(
 	'convert', shopItems[r]
 );
@@ -139,6 +141,8 @@ function buy(num){
 		sellNum += 1
 		playerMoney -= shopItemsPrice[index]
 		document.getElementById('playerMoney').innerHTML = playerMoney
+		console.log(shopItemsPrice[index])
+		console.log(playerMoney)
 	}
 }
 function sell(num){
@@ -170,6 +174,9 @@ function sell(num){
 	
 	playerMoney += playerItemsPrice[index]
 	document.getElementById('playerMoney').innerHTML = playerMoney
+	
+	console.log(playerItemsPrice[index])
+	console.log(playerMoney)
 	
 }
 
