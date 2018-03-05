@@ -119,7 +119,11 @@ function buy(num){
 	
 		document.getElementById('playerItems').innerHTML =
 			document.getElementById('playerItems').innerHTML
-			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + ": " + shopItemsPrice[sellNum] + " Gold</p>";
+			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + "</p>";
+		
+		document.getElementById('shopItems').innerHTML =
+			document.getElementById('shopItems').innerHTML
+			+ "<p id='shopItems" + rr + "a'> ^" + shopItemsPrice[rr] + " Gold^</p>";
 		
 		playerItems.push(shopItems[num])
 		shopItems[index] = ""
@@ -140,7 +144,11 @@ function sell(num){
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
-        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + ": " + playerItemsPrice[buyNum] + " Gold</p>";
+        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + "</p>";
+	
+	document.getElementById('playerItems').innerHTML =
+		document.getElementById('playerItems').innerHTML
+		+ "<p id='playerItems" + rr + "a'> ^" + playerItemsPrice[rr] + " Gold^</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
