@@ -131,10 +131,14 @@ function buy(num){
 		playerItemsDisplay.push(shopItemsDisplay[num])
 		shopItemsDisplay[index] = ""
 		
+		playerItemsPrice.push(shopItemsPrice[num])
+		shopItemsPrice[index] = ""
+		
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
 		playerMoney -= shopItemsPrice[index]
+		document.getElementById('playerMoney').innerHTML = playerMoney
 	}
 }
 function sell(num){
@@ -157,11 +161,15 @@ function sell(num){
 	shopItemsDisplay.push(playerItemsDisplay[num])
 	playerItemsDisplay[index] = ""
 	
+	shopItemsPrice.push(playerItemsPrice[num])
+	playerItemsPrice[index] = ""
+	
 	document.getElementById('playerItems' + num).innerHTML = ""
 	document.getElementById('playerItems' + num + "a").innerHTML = ""
 	buyNum += 1
 	
 	playerMoney += playerItemsPrice[index]
+	document.getElementById('playerMoney').innerHTML = playerMoney
 	
 }
 
