@@ -99,6 +99,7 @@ function buy(num){
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItemsDisplay.indexOf(item)
 	
+	console.log(item)
 	console.log(index)
 	console.log(shopItemsPrice[sellNum])
 	console.log(playerMoney)
