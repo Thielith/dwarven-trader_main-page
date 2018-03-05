@@ -119,7 +119,9 @@ function buy(num){
 	}
 	
 	else{
-	
+		playerMoney -= parseInt(shopItemsPrice[index])
+		document.getElementById('playerMoney').innerHTML = playerMoney
+		
 		document.getElementById('playerItems').innerHTML =
 			document.getElementById('playerItems').innerHTML
 			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + "</p>";
@@ -140,13 +142,12 @@ function buy(num){
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
-		playerMoney -= parseInt(shopItemsPrice[index])
-		document.getElementById('playerMoney').innerHTML = playerMoney
-		console.log(shopItemsPrice[index])
-		console.log(playerMoney)
 	}
 }
 function sell(num){
+
+	playerMoney += parseInt(playerItemsPrice[index])
+	document.getElementById('playerMoney').innerHTML = playerMoney
 
 	console.log("sell")
 	var item = document.getElementById('playerItems' + num).innerHTML
@@ -172,12 +173,6 @@ function sell(num){
 	document.getElementById('playerItems' + num).innerHTML = ""
 	document.getElementById('playerItems' + num + "a").innerHTML = ""
 	buyNum += 1
-	
-	playerMoney += parseInt(playerItemsPrice[index])
-	document.getElementById('playerMoney').innerHTML = playerMoney
-	
-	console.log(playerItemsPrice[index])
-	console.log(playerMoney)
 	
 }
 
