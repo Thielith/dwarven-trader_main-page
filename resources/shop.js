@@ -123,7 +123,7 @@ function buy(num){
 		
 		document.getElementById('playerItems').innerHTML =
 			document.getElementById('playerItems').innerHTML
-			+ "<p id='playerItems" + sellNum + "a'> ^" + shopItemsPrice[rr] + " Gold^</p>";
+			+ "<p id='playerItems" + sellNum + "a'> ^" + shopItemsPrice[num] + " Gold^</p>";
 		
 		playerItems.push(shopItems[num])
 		shopItems[index] = ""
@@ -149,7 +149,7 @@ function sell(num){
 	
 	document.getElementById('shopItems').innerHTML =
 		document.getElementById('shopItems').innerHTML
-		+ "<p id='shopItems" + buyNum + "a'> ^" + playerItemsPrice[rr] + " Gold^</p>";
+		+ "<p id='shopItems" + buyNum + "a'> ^" + playerItemsPrice[num] + " Gold^</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
