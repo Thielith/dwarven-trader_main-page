@@ -107,7 +107,7 @@ function buy(num){
 	console.log("buy")
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItemsDisplay.indexOf(item)
-	console.log(index)
+	console.log(shopItemsPrice)
 	
 	if(shopItemsPrice[index] > playerMoney){
 		console.log("Too Expensive")
