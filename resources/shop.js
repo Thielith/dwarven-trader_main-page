@@ -99,6 +99,8 @@ function buy(num){
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItemsDisplay.indexOf(item)
 
+	console.log(shopItemsPrice[index])
+	console.log(playerMoney)
 	
 	if(shopItemsPrice[index] > playerMoney){
 		console.log("Too Expensive")
@@ -108,7 +110,7 @@ function buy(num){
 	
 		document.getElementById('playerItems').innerHTML =
 			document.getElementById('playerItems').innerHTML
-			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + ": " + shopItemsPrice[rr] + " Gold</p>";
+			+ "<p id='playerItems" + sellNum + "' onclick='sell(" + sellNum + ")'>" + shopItemsDisplay[num] + ": " + shopItemsPrice[num] + " Gold</p>";
 		
 		playerItems.push(shopItems[num])
 		shopItems[index] = ""
@@ -130,7 +132,7 @@ function sell(num){
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
-        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + ": " + playerItemsPrice[rr] + " Gold</p>";
+        + "<p id='shopItems" + buyNum + "' onclick='buy(" + buyNum + ")'>" + playerItemsDisplay[num] + ": " + playerItemsPrice[num] + " Gold</p>";
 	
 	shopItems.push(playerItems[num])
 	playerItems[index] = ""
