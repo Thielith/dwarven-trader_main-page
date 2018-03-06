@@ -1,12 +1,12 @@
 var playerItems = [5, 6];
-var playerMoney = 100
+var playerMoney = 29
 var playerItemsDisplay = [];
 var playerID = 0
 var playerItemsPrice = [];
 
 var shopItems = [1, 2, 3, 4];
 var shopItemsDisplay = [];
-var shopID = 0
+var shopID = -1
 var shopItemsPrice = [];
 
 var socket = io.connect('http://10.0.2.15:33336');
@@ -98,8 +98,12 @@ function update(){
 	}
 }
 
-function recordTransfer(){
-	
+function recordTransfer(BuyerID, SellerID, ResourceID, Quantity, Price){
+	var sendLine = [BuyerID, SellerID, ResourceID, Quantity, Price]
+	console.log("sending information")
+	socket.emit(
+		'transaction', sendLine
+	)
 }
 
 function buy(num){
@@ -141,6 +145,8 @@ function buy(num){
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
+		
+		recordTransfer(PlayerID, ShopID, shopItems[num], 1, shopItemsPrice[num])
 	}
 }
 function sell(num){

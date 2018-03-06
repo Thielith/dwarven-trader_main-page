@@ -42,7 +42,7 @@ def updateDatabaseData(connection,tableName,collummNames, values):
 def addTransactionToDB(connection,BuyerID,SellerID,ResourceID,Quantity,Price):
 	names = ["BuyerID","SellerID","ResourceID","Quantity","Price"]
 	values = [BuyerID,SellerID,ResourceID,Quantity,Price]
-	c = insertIntoDatabase(connection, "transactions" , names, values)
+	c = insertIntoDatabase(connection, "transactions", names, values)
 def updateInventory(connection,BuyerID,SellerID,ResourceID,Quantity,Price):
 	names = ["BuyerID","SellerID","ResourceID","Quantity","Price"]
 	values = [BuyerID,SellerID,ResourceID,Quantity,Price]
@@ -61,9 +61,9 @@ def getDataFromTableByID(connection, table, idName, id):
 	return ret
 	
 
-if sys.argv[7] == "add transaction":
+if sys.argv[6] == "transaction":
 	print("adding transaction")
-	addTransactionToDB(cur,sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5],sys.argv[6])
+	addTransactionToDB(cur,sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])
 	print("commit update")
 	db.commit();
 	print("close")

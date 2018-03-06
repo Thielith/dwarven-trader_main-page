@@ -45,6 +45,9 @@ io.sockets.on('connection', function (socket) {
 		for(i = 0; i < info.length; i++){
 			sendLine += info[i] + " "
 		}
+		
+		sendLine += "transaction"
+		
 		var e = 'python database.py ' + sendLine
 		console.log(e)
 		//exec(e);
