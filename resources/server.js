@@ -51,7 +51,7 @@ io.sockets.on('connection', function (socket) {
 		
 		var e = 'python database.py ' + sendLine
 		console.log(e)
-		//exec(e);
+		exec(e);
 	});
 	
 	//Update Client Info
