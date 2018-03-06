@@ -43,6 +43,7 @@ io.sockets.on('connection', function (socket) {
 		var sendLine = ""
 		
 		for(i = 0; i < info.length; i++){
+			console.log(info[i])
 			sendLine += info[i] + " "
 		}
 		
