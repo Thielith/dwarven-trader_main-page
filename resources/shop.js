@@ -103,7 +103,6 @@ function recordTransfer(){
 }
 
 function buy(num){
-
 	console.log("buy")
 	var item = document.getElementById('shopItems' + num).innerHTML
 	var index = shopItemsDisplay.indexOf(item)
@@ -145,13 +144,12 @@ function buy(num){
 	}
 }
 function sell(num){
-
-	playerMoney += parseInt(playerItemsPrice[index])
-	document.getElementById('playerMoney').innerHTML = playerMoney
-
 	console.log("sell")
 	var item = document.getElementById('playerItems' + num).innerHTML
 	var index = playerItemsDisplay.indexOf(item)
+	
+	playerMoney += parseInt(playerItemsPrice[index])
+	document.getElementById('playerMoney').innerHTML = playerMoney
 	
     document.getElementById('shopItems').innerHTML =
         document.getElementById('shopItems').innerHTML
