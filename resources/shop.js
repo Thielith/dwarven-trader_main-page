@@ -134,19 +134,17 @@ function buy(num){
 			+ "<p id='playerItems" + sellNum + "a'> ^" + shopItemsPrice[num] + " Gold^</p>";
 		
 		playerItems.push(shopItems[num])
-		shopItems[index] = ""
-		
 		playerItemsDisplay.push(shopItemsDisplay[num])
-		shopItemsDisplay[index] = ""
-		
 		playerItemsPrice.push(shopItemsPrice[num])
-		shopItemsPrice[index] = ""
 		
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
 		
 		recordTransfer(playerID, shopID, shopItems[num], 1, shopItemsPrice[num])
+		shopItems[index] = ""
+		shopItemsDisplay[index] = ""
+		shopItemsPrice[index] = ""
 	}
 }
 function sell(num){
