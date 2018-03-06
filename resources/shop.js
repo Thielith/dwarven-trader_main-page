@@ -146,7 +146,7 @@ function buy(num){
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
 		sellNum += 1
 		
-		recordTransfer(PlayerID, ShopID, shopItems[num], 1, shopItemsPrice[num])
+		recordTransfer(playerID, shopID, shopItems[num], 1, shopItemsPrice[num])
 	}
 }
 function sell(num){
