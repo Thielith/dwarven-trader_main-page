@@ -13,7 +13,7 @@ var shopID = -1
 var shopItemsPrice = [];
 
 //shopID, {Item, Item Display, Price}
-var shop = [-1, {ItemID: 1, ItemName: "asdf", Price: undefined}, {ItemID: 2, ItemName: "no", Price: undefined}, {ItemID: 3, ItemName: undefined, Price: undefined}, {ItemID: 4, ItemName: undefined, Price: undefined}]
+var shop = [-1, {ItemID: 1, ItemName: undefined, Price: undefined}, {ItemID: 2, ItemName: undefined, Price: undefined}, {ItemID: 3, ItemName: undefined, Price: undefined}, {ItemID: 4, ItemName: undefined, Price: undefined}]
 
 
 var socket = io.connect('http://10.0.2.15:33336');
@@ -121,7 +121,14 @@ function recordTransfer(BuyerID, SellerID, ResourceID, Quantity, Price){
 
 function buy(num){
 	console.log("buy")
-
+	
+	console.log(player[player.length].ItemID)
+	console.log(player[player.length].ItemName)
+	console.log(player[player.length].Price)
+	console.log(" ")
+	console.log(shop[num].ItemID)
+	console.log(shop[num].ItemName)
+	console.log(shop[num].Price)
 	
 	if(shop[num].Price > playerMoney){
 		console.log("Too Expensive")
@@ -144,7 +151,7 @@ function buy(num){
 			document.getElementById('playerItems').innerHTML
 			+ "<p id='playerItems" + sellNum + "a'> ^" + shop[num].Price + " Gold^</p>";
 		
-		player.push({})
+		player.push({ItemID: undefined, ItemName: undefined, Price: undefined})
 		player[player.length].ItemID = shop[num].ItemID
 		player[player.length].ItemName = shop[num].ItemName
 		player[player.length].Price = shop[num].Price
