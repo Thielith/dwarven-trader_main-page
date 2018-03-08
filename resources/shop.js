@@ -14,10 +14,7 @@ var send = []
 document.getElementById('playerMoney').innerHTML = player[1]
 
 function getData(){
-	//For when theres a table for player info
-	//player.push({})
-	//player[i].ItemID = 90
-	//console.log(player[i])
+	//For when theres a table for player info (like stats and inventory)
 }
 
 socket.emit(
@@ -38,6 +35,7 @@ socket.on('convert', function(list){
 		
 		else{
 			for(rr = 1; rr < shop.length; rr++){
+				console.log(rr)
 				var t = document.getElementById('shopItems').innerHTML =
 					document.getElementById('shopItems').innerHTML
 					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shop[rr].ItemName + "</p>";
@@ -85,9 +83,9 @@ socket.on('convert', function(list){
 
 function update(){
 	send = []
-	for(i = 0; i < playerItems.length; i++){
+	for(i = 0; i < player.length; i++){
 		console.log(i)
-		if(playerItems[i] != ""){
+		if(player[i].ItemName != ""){
 			var x = playerItems.slice(i, i + 1)
 			x = x.toString()
 			send.push(x)
@@ -105,12 +103,6 @@ function recordTransfer(BuyerID, SellerID, ResourceID, Quantity, Price){
 
 function buy(num){
 	console.log("buy")
-
-	console.log(shop[num].ItemID)
-	console.log(shop[num].ItemName)
-	console.log(shop[num].Price)
-	
-	console.log(shop)
 	
 	if(shop[num].Price > player[1]){
 		console.log("Too Expensive")
@@ -134,9 +126,9 @@ function buy(num){
 			+ "<p id='playerItems" + sellNum + "a'> ^" + shop[num].Price + " Gold^</p>";
 		
 		player.push({ItemID: undefined, ItemName: undefined, Price: undefined})
-		player[player.length - 1].ItemID = shop[num].ItemID
-		player[player.length - 1].ItemName = shop[num].ItemName
-		player[player.length - 1].Price = shop[num].Price
+		player[last].ItemID = shop[num].ItemID
+		player[last].ItemName = shop[num].ItemName
+		player[last].Price = shop[num].Price
 		
 		document.getElementById('shopItems' + num).innerHTML = ""
 		document.getElementById('shopItems' + num + "a").innerHTML = ""
@@ -152,12 +144,7 @@ function buy(num){
 }
 function sell(num){
 	console.log("sell")
-	
-	console.log(player[num].ItemID)
-	console.log(player[num].ItemName)
-	console.log(player[num].Price)
-	
-	console.log(player)
+	var last = shop.length - 1
 	
 	player[1] += parseInt(player[num].Price)
 	document.getElementById('playerMoney').innerHTML = player[1]
@@ -171,9 +158,9 @@ function sell(num){
 		+ "<p id='shopItems" + buyNum + "a'> ^" + player[num].Price + " Gold^</p>";
 	
 	shop.push({ItemID: undefined, ItemName: undefined, Price: undefined})
-	shop[shop.length - 1].ItemID = player[num].ItemID
-	shop[shop.length - 1].ItemName = player[num].ItemName
-	shop[shop.length - 1].Price = player[num].Price
+	shop[last].ItemID = player[num].ItemID
+	shop[last].ItemName = player[num].ItemName
+	shop[last].Price = player[num].Price
 	
 	document.getElementById('playerItems' + num).innerHTML = ""
 	document.getElementById('playerItems' + num + "a").innerHTML = ""
@@ -184,7 +171,5 @@ function sell(num){
 	player[num].ItemID = ""
 	player[num].ItemName = ""
 	player[num].Price = ""
-	
-	console.log(shop)
 }
 
