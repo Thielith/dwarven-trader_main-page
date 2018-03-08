@@ -148,6 +148,8 @@ function buy(num){
 			+ "<p id='playerItems" + sellNum + "a'> ^" + shop[num].Price + " Gold^</p>";
 		
 		player.push({ItemID: undefined, ItemName: undefined, Price: undefined})
+		console.log(player)
+		console.log(player.length)
 		player[player.length].ItemID = shop[num].ItemID
 		player[player.length].ItemName = shop[num].ItemName
 		player[player.length].Price = shop[num].Price
