@@ -176,7 +176,7 @@ function sell(num){
 	shop.push({})
 	shop[shop.length].ItemID = player[num].ItemID
 	shop[shop.length].ItemName = player[num].ItemName
-	shop[shop.length].Price player[num].Price
+	shop[shop.length].Price = player[num].Price
 	
 	document.getElementById('playerItems' + num).innerHTML = ""
 	document.getElementById('playerItems' + num + "a").innerHTML = ""
