@@ -27,7 +27,7 @@ socket.on('convert', function(list){
 		shop[r].Price = list[1]
 		r += 1
 		
-		if(r != shop.length - 1){
+		if(r != shop.length){
 			socket.emit(
 				'convert', shop[r].ItemID
 			);
@@ -35,7 +35,6 @@ socket.on('convert', function(list){
 		
 		else{
 			for(rr = 1; rr < shop.length; rr++){
-				console.log(rr)
 				var t = document.getElementById('shopItems').innerHTML =
 					document.getElementById('shopItems').innerHTML
 					+ "<p id='shopItems" + rr + "' onclick='buy(" + rr + ")'>" + shop[rr].ItemName + "</p>";
