@@ -121,11 +121,7 @@ function recordTransfer(BuyerID, SellerID, ResourceID, Quantity, Price){
 
 function buy(num){
 	console.log("buy")
-	
-	console.log(player[player.length].ItemID)
-	console.log(player[player.length].ItemName)
-	console.log(player[player.length].Price)
-	console.log(" ")
+
 	console.log(shop[num].ItemID)
 	console.log(shop[num].ItemName)
 	console.log(shop[num].Price)
