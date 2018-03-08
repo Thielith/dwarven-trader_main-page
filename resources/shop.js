@@ -102,6 +102,7 @@ function recordTransfer(BuyerID, SellerID, ResourceID, Quantity, Price){
 
 function buy(num){
 	console.log("buy")
+	var last = player.length - 1
 	
 	if(shop[num].Price > player[1]){
 		console.log("Too Expensive")
