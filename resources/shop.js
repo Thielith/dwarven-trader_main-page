@@ -126,6 +126,8 @@ function buy(num){
 	console.log(shop[num].ItemName)
 	console.log(shop[num].Price)
 	
+	console.log(shop)
+	
 	if(shop[num].Price > playerMoney){
 		console.log("Too Expensive")
 		var ytv = document.getElementById('shopItems' + num + "a").innerHTML
@@ -157,9 +159,11 @@ function buy(num){
 		sellNum += 1
 		
 		recordTransfer(playerID, shopID, shop[num].ItemID, 1, shop[num].Price)
-		shopItems[num] = ""
-		shopItemsDisplay[num] = ""
-		shopItemsPrice[num] = ""
+		shop[num].ItemID = ""
+		shop[num].ItemName = ""
+		shop[num].Price = ""
+		
+		console.log(shop)
 	}
 }
 function sell(num){
