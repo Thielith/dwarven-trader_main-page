@@ -169,6 +169,12 @@ function buy(num){
 function sell(num){
 	console.log("sell")
 	
+	console.log(player[num].ItemID)
+	console.log(player[num].ItemName)
+	console.log(player[num].Price)
+	
+	console.log(player)
+	
 	playerMoney += parseInt(player[num].Price)
 	document.getElementById('playerMoney').innerHTML = playerMoney
 	
@@ -180,10 +186,10 @@ function sell(num){
 		document.getElementById('shopItems').innerHTML
 		+ "<p id='shopItems" + buyNum + "a'> ^" + player[num].Price + " Gold^</p>";
 	
-	shop.push({})
-	shop[shop.length].ItemID = player[num].ItemID
-	shop[shop.length].ItemName = player[num].ItemName
-	shop[shop.length].Price = player[num].Price
+	shop.push({ItemID: undefined, ItemName: undefined, Price: undefined})
+	shop[shop.length - 1].ItemID = player[num].ItemID
+	shop[shop.length - 1].ItemName = player[num].ItemName
+	shop[shop.length - 1].Price = player[num].Price
 	
 	document.getElementById('playerItems' + num).innerHTML = ""
 	document.getElementById('playerItems' + num + "a").innerHTML = ""
@@ -194,5 +200,7 @@ function sell(num){
 	player[num].ItemID = ""
 	player[num].ItemName = ""
 	player[num].Price = ""
+	
+	console.log(shop)
 }
 
