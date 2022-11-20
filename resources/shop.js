@@ -4,7 +4,7 @@ var player = [0, 29, {ItemID: 5, ItemName: undefined, Price: undefined}, {ItemID
 //shopID, {Item, Item Display, Price}
 var shop = [-1, {ItemID: 1, ItemName: undefined, Price: undefined}, {ItemID: 2, ItemName: undefined, Price: undefined}, {ItemID: 3, ItemName: undefined, Price: undefined}, {ItemID: 4, ItemName: undefined, Price: undefined}]
 
-var socket = io.connect('http://10.0.2.15:33336');
+var socket = io.connect('http://xx.x.x.xx:xxxxx'); // Editing this in case this IP can be used maliciously.
 var r = 1;
 var buyNum = 0;
 var sellNum = 0;
